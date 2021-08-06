@@ -1,0 +1,27 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.jumbotron{
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: transparent;
+    background-image: linear-gradient(to right, #3C6EC4 , #240354);
+
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    color: black;
+    background-color: #c27171;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin-top: 12px;
+  }
