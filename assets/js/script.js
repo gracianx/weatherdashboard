@@ -90,3 +90,37 @@ function getWeather(place) {
         };
 
     })};
+
+cities = JSON.parse(localStorage.getItem("cities")) ?? [];
+
+console.log(cities);
+
+cities.forEach(loadCityButton);
+
+function loadCityButton(city){
+    var cityButton = $("<button>");
+    cityButton.text(city);
+    $(".saved-cities").prepend(cityButton);
+    cityButton.on("click", function (event) {
+        event.preventDefault();
+        getWeather(city);
+        getForecast(city);
+    });
+};
+
+function saveCities (city) {
+    
+    cities.push(city)
+    localStorage.setItem("cities", JSON.stringify(cities));
+    var value = localStorage.getItem("cities");
+    $(".saved-cities").text("")
+    cities.forEach(loadCityButton); 
+};
+
+searchBtn.on("click", function (event) {
+    city = $("#searched-city").val().trim();
+    event.preventDefault();
+    getCurrentWeather(city);
+    getForecast(city);
+    saveCity(city);
+});
